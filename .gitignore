@@ -1,0 +1,11 @@
+*.opensdf
+*.sdf
+*.suo
+
+*.VC.db
+*.VC.opendb
+*.sln
+*.xcworkspace
+Binaries
+Intermediate
+Saved
