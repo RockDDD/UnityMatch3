@@ -41,7 +41,7 @@ bool UMatch3BlueprintFunctionLibrary::IsGameActive(UObject* WorldContextObject)
 	return false;
 }
 
-vod UMatch3BlueprintFunctionLibrary::PauseGameTimer(UObject* WorldContextObject, bool bPuse)
+void UMatch3BlueprintFunctionLibrary::PauseGameTimer(UObject* WorldContextObject, bool bPuse)
 {
 	if (AMyUnrealMatchGameModeBase* GameMode = Cast<AMyUnrealMatchGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject)))
 	{

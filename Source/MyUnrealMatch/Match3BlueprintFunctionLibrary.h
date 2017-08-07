@@ -14,15 +14,15 @@ class MYUNREALMATCH_API UMatch3BlueprintFunctionLibrary : public UBlueprintFunct
 	GENERATED_BODY()
 	
 public:
-	UFUNCTION(BlueprintCallable, Category = Match3 Gameplay, Meta = (WorldContext = "WorldContextObject"))
+	UFUNCTION(BlueprintCallable, Category = "Match3 Gameplay", Meta = (WorldContext = "WorldContextObject"))
 		static APlayerController* GetLocalPlayerController(UObject* WorldContextObject);
 
-	UFUNCTION(BlueprintCallable, Category = Match3 Gameplay)
+	UFUNCTION(BlueprintCallable, Category = "Match3 Gameplay")
 		static FString GetOnlineAccountID(APlayerController* PlayerController);
-	UFUNCTION(BlueprintCallable, Category = Match3 Gameplay£¬Meta = (WorldContext = "WorldContextObject"))
+	UFUNCTION(BlueprintCallable, Category= "Match3 Gameplay",Meta = (WorldContext = "WorldContextObject"))
 		static bool IsGameActive(UObject* WorldContextObject);
 
-	UFUNCTION(BlueprintCallable, Category = Match3 Gameplay£¬Meta = (WorldContext = "WorldContextObject"))
+	UFUNCTION(BlueprintCallable, Category = "Match3 Gameplay",Meta = (WorldContext = "WorldContextObject"))
 		static void PauseGameTimer(UObject* WorldContextObject, bool bPuse);
 	
 	

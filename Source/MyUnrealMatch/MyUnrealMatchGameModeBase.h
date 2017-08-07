@@ -3,9 +3,9 @@
 #pragma once
 
 #include "GameFramework/GameModeBase.h"
-#include "MyUnrealMatchGameModeBase.generated.h"
 #include "Match3SaveGame.h"
-
+#include "Blueprint/UserWidget.h"
+#include "MyUnrealMatchGameModeBase.generated.h"
 
 USTRUCT()
 struct FMatch3Reward 
@@ -48,7 +48,7 @@ public:
 		bool IsGameActive() const;
 
 	UFUNCTION(BlueprintCallable, Category = Game)
-		bool PauseGameTimer(bool bPause) const;
+		void PauseGameTimer(bool bPause);
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere, Category = Game)
 		TArray<FMatch3Reward> Rewards;
@@ -82,7 +82,7 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, Category = Game)
 		int32 GameWasWon(bool bGameWasWon);
 
-	UFUNCTION(BlueprintCallable, Category = Save Game)
+	UFUNCTION(BlueprintCallable, Category = "Save Game")
 		void UpdateScoresFromLeaderBoard(int32 GoldScore, int32 SilverScore, int32 BronzeScore);
 
 public:

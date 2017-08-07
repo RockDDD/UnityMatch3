@@ -5,6 +5,7 @@
 #include "GameFramework/Pawn.h"
 #include "Match3PlayerController.h"
 #include "Match3BlueprintFunctionLibrary.h"
+#include "Match3GameInstance.h"
 
 AMyUnrealMatchGameModeBase::AMyUnrealMatchGameModeBase(const FObjectInitializer& ObjectInitializer)
 	:Super(ObjectInitializer)
@@ -128,7 +129,7 @@ void AMyUnrealMatchGameModeBase::AddScore(int32 Points)
 				float StartingTimeValue = GetWorldTimerManager().GetTimerRemaining(GameOverTimer);
 				if (StartingTimeValue >= 0.0f)
 				{
-					GetWorldTimerManager().SetTimer(GameOverTimer, this, &AMyUnrealMatchGameModeBase::GameOver, StartingTimeValue + (ScoreAwardCount * Reward.TimeAwarded),false);
+					GetWorldTimerManager().SetTimer(GameOverTimer, this, &AMyUnrealMatchGameModeBase::GameOver, StartingTimeValue + (ScoreAwardCount * Reward.TimeAwareded),false);
 					AwardBonus();
 				}
 			}
@@ -181,7 +182,7 @@ int32 AMyUnrealMatchGameModeBase::CalculateBombPower_Implementation()
 	return 0;
 }
 
-int32 AMyUnrealMatchGameModeBase::ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass)
+void AMyUnrealMatchGameModeBase::ChangeMenuWidget(TSubclassOf<UUserWidget> NewWidgetClass)
 {
 	if (CurrentWidget)
 	{

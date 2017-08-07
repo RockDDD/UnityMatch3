@@ -6,7 +6,7 @@ public class MyUnrealMatch : ModuleRules
 {
 	public MyUnrealMatch(TargetInfo Target)
 	{
-		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore" });
+		PublicDependencyModuleNames.AddRange(new string[] { "Core", "CoreUObject", "Engine", "InputCore","UMG", "Paper2D" });
 
 		PrivateDependencyModuleNames.AddRange(new string[] {  });
 
